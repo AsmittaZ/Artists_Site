@@ -7,15 +7,16 @@ async function buscarRanking() {
         const divRanking = document.getElementById('ranking');
         
         // Gera o HTML do ranking com as imagens dos sprites
+        // No seu app.js, simplifique a div principal:
         divRanking.innerHTML = `
-            <div style="font-family: monospace; color: #00ff41;">
+            <div style="color: #ffffff;">
                 ${dados.map(j => `
-                    <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #333; padding: 10px 0;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #333; padding: 15px 0; font-size: 12px;">
                         <div style="display: flex; align-items: center; gap: 15px;">
                             <img src="sprites/avatar/${j.user_name}.png" 
-                                 onerror="this.style.display='none'" 
-                                 alt="${j.user_name}" 
-                                 style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                                onerror="this.style.display='none'" 
+                                alt="${j.user_name}" 
+                                style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; image-rendering: pixelated;">
                             <span>${j.user_name}</span>
                         </div>
                         <span>${j.score} pts</span>
