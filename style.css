@@ -51,10 +51,15 @@ h1 {
 }
 
 .nome {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .pontos {
     color: #00ff41;
+    font-size: 16px;
+}
+
+.pts {
+    color: #ffffff;
     font-size: 12px;
 }

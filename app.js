@@ -16,7 +16,7 @@ async function buscarRanking() {
                                  class="avatar">
                             <span class="nome">${j.user_name}</span>
                         </div>
-                        <span class="pontos">${j.score} pts</span>
+                        <span class="pontos">${j.score}<span class="pts"> pts</span></span>
                     </div>
                 `).join('')}
             </div>
