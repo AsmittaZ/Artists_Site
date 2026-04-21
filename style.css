@@ -1,11 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-body {
-    background-color: #000;
-    color: #ffffff;
-    font-family: 'Press Start 2P', cursive;
+h1 {
+    text-align: center;
+    /* Se quiser dar um espaço em cima e embaixo: */
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente (opcional) */
+}
 .ranking-container {
     width: 90%;
     max-width: 600px;
