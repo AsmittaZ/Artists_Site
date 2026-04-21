@@ -12,7 +12,7 @@ async function buscarRanking() {
                 ${dados.map(j => `
                     <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #333; padding: 10px 0;">
                         <div style="display: flex; align-items: center; gap: 15px;">
-                            <img src="sprites/avatar${j.user_name}.png" 
+                            <img src="sprites/avatar/${j.user_name}.png" 
                                  onerror="this.style.display='none'" 
                                  alt="${j.user_name}" 
                                  style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
