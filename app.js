@@ -11,7 +11,7 @@ async function buscarRanking() {
                     <div class="jogador-item">
                         <div class="jogador-info">
                             <img src="sprites/avatar/${j.user_name.toLowerCase()}.png" 
-                                 onerror="this.style.display='none'" 
+                                 onerror="this.onerror=null; this.src='sprites/avatar/${j.user_name}.png'" 
                                  alt="${j.user_name}" 
                                  class="avatar">
                             <span class="nome">${j.user_name}</span>
