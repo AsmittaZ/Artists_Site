@@ -10,7 +10,7 @@ async function buscarRanking() {
                 ${dados.map(j => `
                     <div class="jogador-item">
                         <div class="jogador-info">
-                            <img src="sprites/avatar/${j.user_name}.png" 
+                            <img src="sprites/avatar/${j.user_name.toLowerCase()}.png" 
                                  onerror="this.style.display='none'" 
                                  alt="${j.user_name}" 
                                  class="avatar">
