@@ -1,30 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
-    font-family: 'Press+Start+2P', cursive; /* Nome da fonte pixelada */
     background-color: #000;
-    color: #00ff41;
+    color: #ffffff;
+    font-family: 'Press Start 2P', cursive;
 }
 
-body {
-    background-color: #0d0d0d;
-    color: #00ff41; /* Verde neon estilo terminal */
-    font-family: 'Courier New', Courier, monospace;
+.ranking-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.jogador-item {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+    padding: 15px 0;
+    font-size: 10px; /* Tamanho pequeno típico de pixel art */
 }
 
-h1 {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-bottom: 2px solid #fff34e;
+.jogador-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-#ranking {
-    font-size: large;
-    width: 500px;
-    background: #1a1a1a;
-    padding: 20px;
-    border: 1px solid #333;
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    image-rendering: pixelated;
+}
+
+.pontos {
+    color: #00ff41; /* Verde neon para os pontos */
 }
