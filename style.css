@@ -23,8 +23,8 @@ h1 {
 }
 
 .ranking-container {
-    min-width: 800px;
-    max-width: 800px;
+    min-width: 500px;
+    max-width: 600px;
 }
 
 .jogador-item {
