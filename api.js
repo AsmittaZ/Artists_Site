@@ -6,7 +6,7 @@ const { MongoClient } = require('mongodb');
 const app = express();
 app.use(cors()); // Isso é fundamental para o site conseguir "ler" o seu servidor
 
-const uri = "mongodb+srv://rankbot:jadson2242@asmitaserver.fvz3w.mongodb.net/?retryWrites=true&w=majority&appName=AsmitaServer"; // A mesma que você usa no bot
+const uri = process.env.MONGODB_URI;
 
 app.get('/ranking', async (req, res) => {
     const client = new MongoClient(uri);
