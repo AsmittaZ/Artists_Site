@@ -1,7 +1,7 @@
 async function buscarRanking() {
     try {
         // Busca os dados da sua API que está rodando na porta 3000
-        const resposta = await fetch('http://localhost:3000/ranking');
+        const resposta = await fetch('https://artists-site.onrender.com/ranking');
         const dados = await resposta.json();
         
         const divRanking = document.getElementById('ranking');
