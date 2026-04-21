@@ -12,6 +12,7 @@ body {
     flex-direction: column;
     align-items: center; /* Centraliza horizontalmente */
     justify-content: center; /* Centraliza verticalmente (opcional) */
+    background-color: black;
 }
 .ranking-container {
     width: 90%;
@@ -23,7 +24,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #ffffff;
     padding: 15px 0;
     font-size: 10px; /* Tamanho pequeno típico de pixel art */
 }
@@ -35,13 +36,13 @@ body {
 }
 
 .avatar {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     object-fit: cover;
     image-rendering: pixelated;
 }
 
 .pontos {
-    color: #00ff41; /* Verde neon para os pontos */
+    color: #ffffff; /* Verde neon para os pontos */
 }
