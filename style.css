@@ -79,28 +79,28 @@ h1 {
 /* Primeiro Lugar (Ouro) */
 .jogador-item:nth-child(1) .avatar{
     background-color: rgb(248, 189, 25); /* Dourado suave */
-
+    border-color: #fff1a0;
 }
 
 /* Segundo Lugar (Prata) */
 .jogador-item:nth-child(2) .avatar{
     background-color: rgb(116, 33, 102); /* Dourado suave */
-
+    border-color: #dc5ee7;
 }
 
 /* Terceiro Lugar (Bronze) */
 .jogador-item:nth-child(3) .avatar{
     background-color: rgb(46, 74, 201); /* Dourado suave */
-
+    border-color: #4bb7f5;
 }
 .jogador-item:nth-child(4) .avatar {
     background-color: rgb(56, 146, 93); /* Dourado suave */
-
+    border-color: #032e0d;
 }
 
 .jogador-item:nth-child(5) .avatar {
     background-color: rgb(56, 146, 93); /* Dourado suave */
-
+    border-color: #032e0d;
 }
 .nome {
     font-size: 14px;
