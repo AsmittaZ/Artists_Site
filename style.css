@@ -35,6 +35,31 @@ h1 {
     padding: 15px 0;
 }
 
+/* Primeiro Lugar (Ouro) */
+.jogador-item:nth-child(1) {
+    background-color: rgba(177, 161, 74, 0.363); /* Dourado suave */
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Segundo Lugar (Prata) */
+.jogador-item:nth-child(2) {
+    background-color: rgba(124, 50, 124, 0.315); /* Prata suave */
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Terceiro Lugar (Bronze) */
+.jogador-item:nth-child(3) {
+    background-color: rgba(94, 95, 161, 0.226); /* Bronze suave */
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
 .jogador-info {
     display: flex;
     align-items: center;
@@ -48,8 +73,35 @@ h1 {
     object-fit: cover;
     image-rendering: pixelated;
     border: 2px solid #808080;
+    background-color: #353535;
 }
 
+/* Primeiro Lugar (Ouro) */
+.jogador-item:nth-child(1) .avatar{
+    background-color: rgb(248, 189, 25); /* Dourado suave */
+
+}
+
+/* Segundo Lugar (Prata) */
+.jogador-item:nth-child(2) .avatar{
+    background-color: rgb(116, 33, 102); /* Dourado suave */
+
+}
+
+/* Terceiro Lugar (Bronze) */
+.jogador-item:nth-child(3) .avatar{
+    background-color: rgb(46, 74, 201); /* Dourado suave */
+
+}
+.jogador-item:nth-child(4) .avatar {
+    background-color: rgb(56, 146, 93); /* Dourado suave */
+
+}
+
+.jogador-item:nth-child(5) .avatar {
+    background-color: rgb(56, 146, 93); /* Dourado suave */
+
+}
 .nome {
     font-size: 14px;
 }
