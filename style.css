@@ -28,12 +28,14 @@ h1 {
 }
 
 .jogador-item {
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 2px solid #333;
     padding: 15px 0;
 }
+
 
 /* Primeiro Lugar (Ouro) */
 .jogador-item:nth-child(1) {
@@ -61,6 +63,7 @@ h1 {
 
 
 .jogador-info {
+    margin-left: 10px;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -74,6 +77,11 @@ h1 {
     image-rendering: pixelated;
     border: 2px solid #808080;
     background-color: #353535;
+    transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(2);
 }
 
 /* Primeiro Lugar (Ouro) */
@@ -114,4 +122,8 @@ h1 {
 .pts {
     color: #ffffff;
     font-size: 12px;
+}
+.jogador-item:hover {
+    margin-left: 20px;
+    background-color: #ffffff2c;
 }
