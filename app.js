@@ -5,15 +5,17 @@ async function buscarRanking() {
         
         const divRanking = document.getElementById('ranking');
         
+        // ... dentro da sua função buscarRanking
         divRanking.innerHTML = `
             <div class="ranking-container">
-                ${dados.map(j => `
-                    <div class="jogador-item">
+                ${dados.map((j, index) => `
+                    <div class="jogador-item rank-${index + 1}">
                         <div class="jogador-info">
-                            <img src="sprites/avatar/${j.user_name.toLowerCase()}.png" 
-                                 onerror="this.onerror=null; this.src='sprites/avatar/${j.user_name}.png'" 
-                                 alt="${j.user_name}" 
-                                 class="avatar">
+                            <a href="${j.profile_link}" target="_blank" rel="noopener noreferrer">
+                                <img src="sprites/avatar/${j.user_name.toLowerCase()}.png" 
+                                    onerror="this.onerror=null; this.src='sprites/avatar/${j.user_name}.png'" 
+                                    alt="${j.user_name}" class="avatar">
+                            </a>
                             <span class="nome">${j.user_name}</span>
                         </div>
                         <span class="pontos">${j.score}<span class="pts"> pts</span></span>

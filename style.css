@@ -37,31 +37,20 @@ h1 {
     transition: transform 0.3s ease;
 }
 
-
-/* Primeiro Lugar (Ouro) */
-.jogador-item:nth-child(1) {
-    background-color: rgba(177, 161, 74, 0.363); /* Dourado suave */
-    border-radius: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
+/* Ranking - Estilo Específico */
+.jogador-item.rank-1 {
+    background-color: rgba(177, 161, 74, 0.363);
+    border: 2px solid #ffb443;
 }
+.jogador-item.rank-2 { background-color: rgba(124, 50, 124, 0.315); }
+.jogador-item.rank-3 { background-color: rgba(94, 95, 161, 0.226); }
 
-/* Segundo Lugar (Prata) */
-.jogador-item:nth-child(2) {
-    background-color: rgba(124, 50, 124, 0.315); /* Prata suave */
-    border-radius: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-/* Terceiro Lugar (Bronze) */
-.jogador-item:nth-child(3) {
-    background-color: rgba(94, 95, 161, 0.226); /* Bronze suave */
-    border-radius: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
+/* Ranking - Avatares (O seletor precisa do rank-X na div pai) */
+.rank-1 .avatar { background-color: rgb(240, 185, 65); border-color: #fff1a0; }
+.rank-2 .avatar { background-color: rgb(134, 53, 121); border-color: #dc5ee7; }
+.rank-3 .avatar { background-color: rgb(46, 74, 201); border-color: #4bb7f5; }
+.rank-4 .avatar { background-color: rgb(46, 128, 50); border-color: #4bb7f5; }
+.rank-5 .avatar { background-color: rgb(46, 128, 50); border-color: #4bb7f5; }
 
 .jogador-info {
     margin-left: 10px;
@@ -85,32 +74,7 @@ h1 {
     transform: scale(2);
 }
 
-/* Primeiro Lugar (Ouro) */
-.jogador-item:nth-child(1) .avatar{
-    background-color: rgb(248, 189, 25); /* Dourado suave */
-    border-color: #fff1a0;
-}
 
-/* Segundo Lugar (Prata) */
-.jogador-item:nth-child(2) .avatar{
-    background-color: rgb(116, 33, 102); /* Dourado suave */
-    border-color: #dc5ee7;
-}
-
-/* Terceiro Lugar (Bronze) */
-.jogador-item:nth-child(3) .avatar{
-    background-color: rgb(46, 74, 201); /* Dourado suave */
-    border-color: #4bb7f5;
-}
-.jogador-item:nth-child(4) .avatar {
-    background-color: rgb(56, 146, 93); /* Dourado suave */
-    border-color: #032e0d;
-}
-
-.jogador-item:nth-child(5) .avatar {
-    background-color: rgb(56, 146, 93); /* Dourado suave */
-    border-color: #032e0d;
-}
 .nome {
     font-size: 14px;
 }
