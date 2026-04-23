@@ -7,7 +7,6 @@ async function buscarRanking() {
         
         divRanking.innerHTML = `
             <div class="ranking-container">
-                // Dentro do seu .map
             ${dados.map((j, index) => {
                 // Se o rank for entre 1 e 5, usa o arquivo correspondente
                 // Caso contrário, usa 'rank-default.png' (substitua pelo nome da sua moldura padrão)
