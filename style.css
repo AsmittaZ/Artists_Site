@@ -62,7 +62,6 @@ h1 {
 /* Ranking - Estilo Específico */
 .jogador-item.rank-1 {
     background-color: rgba(177, 161, 74, 0.363);
-    border: 2px solid #ffb443;
 }
 .jogador-item.rank-2 { background-color: rgba(124, 50, 124, 0.315); }
 .jogador-item.rank-3 { background-color: rgba(94, 95, 161, 0.226); }
