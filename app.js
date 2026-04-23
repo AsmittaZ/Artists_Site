@@ -5,22 +5,31 @@ async function buscarRanking() {
         
         const divRanking = document.getElementById('ranking');
         
-        // ... dentro da sua função buscarRanking
         divRanking.innerHTML = `
             <div class="ranking-container">
-                ${dados.map((j, index) => `
+                // Dentro do seu .map
+            ${dados.map((j, index) => {
+                // Se o rank for entre 1 e 5, usa o arquivo correspondente
+                // Caso contrário, usa 'rank-default.png' (substitua pelo nome da sua moldura padrão)
+                const moldura = (index < 5) ? `rank-${index + 1}.png` : 'rank-geral.png';
+
+                return `
                     <div class="jogador-item rank-${index + 1}">
                         <div class="jogador-info">
-                            <a href="${j.profile_link}" target="_blank" rel="noopener noreferrer">
+                            <div class="avatar-borda-wrapper">
+                                <a href="${j.profile_link}" target="_blank" rel="noopener noreferrer" class="avatar-link">
                                     <img src="sprites/avatar/${j.user_name.toLowerCase()}.png"
                                         onerror="this.onerror=null; this.src='sprites/avatar/${j.user_name}.png'"
                                         alt="${j.user_name}" class="avatar">
-                            </a>
+                                </a>
+                                <img src="sprites/avatar/${moldura}" class="borda-moldura" alt="borda">
+                            </div>
                             <span class="nome">${j.user_name}</span>
                         </div>
                         <span class="pontos">${j.score}<span class="pts"> pts</span></span>
                     </div>
-                `).join('')}
+                `;
+            }).join('')}
             </div>
         `;
     } catch (erro) {

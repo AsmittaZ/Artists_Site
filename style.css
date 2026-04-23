@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url(sprites/avatar/background.png);
+    background-image: url('sprites/avatar/background.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -34,84 +34,91 @@ h1 {
 }
 
 .jogador-item {
-    margin-top: 5px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-sizing: border-box; 
-  
+    
     /* Borda PNG */
     border: 5px solid transparent;
     border-image-source: url('sprites/avatar/border.png');
     border-image-slice: 5;
     border-image-repeat: round;
     
-    /* Estilo do conteúdo */
-    border-radius: 10px;
-    padding: 15px 0px;
-    transition: transform 0.3s ease;
-
-    /* Background imagem*/
-    background-image: url(sprites/avatar/wood.png);
+    padding: 10px;
+    background-image: url('sprites/avatar/wood.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     image-rendering: pixelated;
+    
+    transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-/* Ranking - Estilo Específico */
-.jogador-item.rank-1 {
-    background-color: rgba(177, 161, 74, 0.363);
+.jogador-item:hover {
+    z-index: 100;
+    position: relative; /* Obrigatório para o z-index funcionar */
+    transform: scale(1.02); /* Escala leve do item principal */
 }
+
+/* Ranking - Estilos de Cores */
+.jogador-item.rank-1 { background-color: rgba(177, 161, 74, 0.363); }
 .jogador-item.rank-2 { background-color: rgba(124, 50, 124, 0.315); }
 .jogador-item.rank-3 { background-color: rgba(94, 95, 161, 0.226); }
 
-/* Ranking - Avatares (O seletor precisa do rank-X na div pai) */
-.rank-1 .avatar { background-color: rgb(240, 185, 65); border-color: #fff1a0; }
-.rank-2 .avatar { background-color: rgb(134, 53, 121); border-color: #dc5ee7; }
-.rank-3 .avatar { background-color: rgb(46, 74, 201); border-color: #4bb7f5; }
-.rank-4 .avatar { background-color: rgb(46, 128, 50); border-color: #4bb7f5; }
-.rank-5 .avatar { background-color: rgb(46, 128, 50); border-color: #4bb7f5; }
+/* Wrapper do Avatar + Borda */
+.avatar-borda-wrapper {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;    /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+}
 
+.avatar-borda-wrapper:hover {
+    transform: scale(1.5);
+    z-index: 100;
+}
+
+.avatar {
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10%;
+    image-rendering: pixelated;
+    display: block; 
+    background-color: #747474;
+    /* Removemos o posicionamento absoluto daqui, deixando o Flexbox cuidar da centralização */
+}
+
+.borda-moldura {
+    position: absolute;
+    top: -20;
+    left: -20;
+    width: 130%;
+    height: 130%;
+    z-index: 10;
+    pointer-events: none;
+    /* Isso garante que a borda cubra o container pai inteiro */
+}
+
+/* Informações do Jogador */
 .jogador-info {
-    margin: 5px 20px 5px 20px;
+    margin-right: 20px;
     display: flex;
     align-items: center;
     gap: 15px;
 }
-
-.avatar {
-  /* Define o tamanho total da caixa (incluindo borda e padding) */
-  box-sizing: border-box; 
-  width: 104px; /* 80px do avatar + 12px de cada lado da borda */
-  height: 104px;
-  
-  /* Borda PNG */
-  border: 8px solid transparent;
-  border-image-source: url('sprites/avatar/border.png');
-  border-image-slice: 5;
-  border-image-repeat: round;
-  
-  /* Estilo do conteúdo */
-  border-radius: 10px;
-  object-fit: cover;
-  image-rendering: pixelated;
-  background-color: #353535;
-}
-
-
-
-.avatar:hover {
-    transform: scale(2);
-}
-
 
 .nome {
     font-size: 12px;
 }
 
 .pontos {
-    margin: 5px 20px 5px 20px;
     color: #4ce472;
     font-size: 14px;
 }
@@ -120,8 +127,9 @@ h1 {
     color: #ffffff;
     font-size: 12px;
 }
-.jogador-item:hover {
-    border-color: #ffffff;
-    background-color: #747474;
-     transform: scale(1.2);
-}
+
+.rank-1 .avatar { background-color: rgb(240, 185, 65); }
+.rank-2 .avatar { background-color: rgb(134, 53, 121); }
+.rank-3 .avatar { background-color: rgb(46, 74, 201); }
+.rank-4 .avatar { background-color: rgb(46, 128, 50); }
+.rank-5 .avatar { background-color: rgb(46, 128, 50); }
