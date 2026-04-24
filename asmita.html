@@ -4,55 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil do Artista</title>
-    <style>
-        body { 
-            background-color: #1a1a1a; 
-            color: white; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            font-family: sans-serif; 
-            margin: 0;
-        }
-
-        header {
-            text-align: center;
-            padding: 20px;
-        }
-
-        #perfil {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid #4a4a4a;
-            image-rendering: pixelated;
-            margin-bottom: 10px;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 20px;
-            
-            width: 90%;
-            max-width: 1000px;
-        }
-
-        .grid-container img {
-            padding: 5px;
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: contain;
-            image-rendering: pixelated;
-            border: 2px solid #333;
-        }
-    </style>
+    <link rel="stylesheet" href= "artists.css">
 </head>
 <body>
 
     <header>
+    <div class="perfil-container">
         <img id="perfil" src="sprites/avatar/Asmita.png" alt="Foto de Perfil">
         <h1>Asmita</h1>
+    </div>
     </header>
 
     <main>

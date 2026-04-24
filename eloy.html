@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Artista</title>
+    <link rel="stylesheet" href= "artists.css">
+</head>
+<body>
+
+    <header>
+    <div class="perfil-container">
+        <img id="perfil" src="sprites/avatar/Eloy.png" alt="Foto de Perfil">
+        <h1>Eloy</h1>
+    </div>
+    </header>
+
+    <main>
+        <div id="galeria-grid" class="grid-container"></div>
+    </main>
+
+    <script>
+        // Lista os nomes dos arquivos que estão na mesma pasta do head.gif ou dentro dela
+        const desenhos = [
+           "",
+        ];
+
+        const galeria = document.getElementById('galeria-grid');
+
+        desenhos.forEach(arquivo => {
+            const img = document.createElement('img');
+            // Caminho relativo para a pasta dos desenhos
+            img.src = `sprites/andando/${arquivo}.gif`;
+            img.alt = "Desenho";
+            galeria.appendChild(img);
+        });
+    </script>
+</body>
+</html>
