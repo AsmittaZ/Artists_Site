@@ -55,3 +55,11 @@ header {
     image-rendering: pixelated;
     border: 2px solid #333;
 }
+
+.perfil-container {
+    display: flex;            /* Ativa o sistema flexbox */
+    flex-direction: column;   /* Empilha os itens verticalmente */
+    align-items: center;      /* Centraliza horizontalmente */
+    justify-content: center;  /* Centraliza verticalmente */
+    gap: 15px;                /* Espaçamento entre a imagem e o nome */
+}
