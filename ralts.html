@@ -23,7 +23,26 @@
     <script>
         // Lista os nomes dos arquivos que estão na mesma pasta do head.gif ou dentro dela
         const desenhos = [
-           "",
+            "algo_dream",
+            "elite",
+            "trust_the_fish",
+            "cryo_barrel",
+            "mine_n_dance",
+            "arcadester",
+            "uncleclick",
+            "hotmominyourarea",
+            "skamdaddy",
+            "the_tomb_raider",
+            "the_collector",
+            "fast_&_holiday",
+            "not_wanted",
+            "gears_of_yore",
+            "gold_caesar",
+            "silver_caesar",
+            "tomatotroppers",
+            "royal_necklace",
+            "black_pendant",
+            "soda_cannon",
         ];
 
         const galeria = document.getElementById('galeria-grid');
@@ -31,7 +50,7 @@
         desenhos.forEach(arquivo => {
             const img = document.createElement('img');
             // Caminho relativo para a pasta dos desenhos
-            img.src = `sprites/andando/${arquivo}.gif`;
+            img.src = `sprites/ralts/${arquivo}.gif`;
             img.alt = "Desenho";
             galeria.appendChild(img);
         });
