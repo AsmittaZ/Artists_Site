@@ -16,14 +16,15 @@ async function buscarRanking() {
                     <div class="jogador-item rank-${index + 1}">
                         <div class="jogador-info">
                             <div class="avatar-borda-wrapper">
-                                <a href="${j.profile_link}" target="_blank" rel="noopener noreferrer" class="avatar-link">
+                                <a href="${j.user_name}.html" target="_blank" rel="noopener noreferrer" class="avatar-link">
                                     <img src="sprites/avatar/${j.user_name.toLowerCase()}.png"
                                         onerror="this.onerror=null; this.src='sprites/avatar/${j.user_name}.png'"
                                         alt="${j.user_name}" class="avatar">
                                 </a>
                                 <img src="sprites/avatar/${moldura}" class="borda-moldura" alt="borda">
                             </div>
-                            <span class="nome">${j.user_name}</span>
+                            <a class = "link-rc" href="${j.profile_link}" target=" _blank">
+                            <span class="nome">${j.user_name}</span></a>
                         </div>
                         <span class="pontos">${j.score}<span class="pts"> pts</span></span>
                     </div>

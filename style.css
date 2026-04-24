@@ -133,3 +133,7 @@ h1 {
 .rank-3 .avatar { background-color: rgb(46, 74, 201); }
 .rank-4 .avatar { background-color: rgb(46, 128, 50); }
 .rank-5 .avatar { background-color: rgb(46, 128, 50); }
+
+.link-rc {
+    color: #ffffff;
+}

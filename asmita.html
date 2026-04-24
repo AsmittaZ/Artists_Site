@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Artista</title>
+    <style>
+        body { 
+            background-color: #1a1a1a; 
+            color: white; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            font-family: sans-serif; 
+            margin: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #perfil {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #4a4a4a;
+            image-rendering: pixelated;
+            margin-bottom: 10px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            
+            width: 90%;
+            max-width: 1000px;
+        }
+
+        .grid-container img {
+            padding: 5px;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            image-rendering: pixelated;
+            border: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img id="perfil" src="sprites/avatar/Asmita.png" alt="Foto de Perfil">
+        <h1>Asmita</h1>
+    </header>
+
+    <main>
+        <div id="galeria-grid" class="grid-container"></div>
+    </main>
+
+    <script>
+        // Lista os nomes dos arquivos que estão na mesma pasta do head.gif ou dentro dela
+        const desenhos = [
+            "Breathtaking",
+            "armag",
+            "bonsai1",
+            "Breathtaking",
+            "British_Moai",
+            "camer",
+            "cap_patria",
+            "Car",
+            "Carnaval_Brasil",
+            "charge",
+            "chuky",
+            "coffe",
+            "Dark Energy",
+            "doumpa2",
+            "dragon",
+            "Dragon_Wing",
+            "elf",
+            "fire",
+            "globo",
+            "halloween",
+            "hamafia",
+            "hamax",
+            "hestia",
+            "iglu",
+            "kinetic_energy",
+            "maleta-",
+            "mecha_",
+            "Metroid",
+            "miami_city",
+            "Milano2",
+            "mind",
+            "miner",
+            "mluck",
+            "muttley ",
+            "Nuclear_Energy",
+            "obsidian",
+            "oktober",
+            "palm",
+            "Palm2",
+            "plasma_rifle",
+            "polar",
+            "raid",
+            "robo_astro",
+            "Sagittarius",
+            "sakura",
+            "sakura2",
+            "sakura3",
+            "sax",
+            "Sound_Energy",
+            "tatu",
+            "tec",
+            "Thermal_energy",
+            "Uranus",
+            "violin",
+            "warhamer"
+          
+
+            // Adicione os próximos desenhos aqui, ex: "desenho2.gif", "desenho3.png"
+        ];
+
+        const galeria = document.getElementById('galeria-grid');
+
+        desenhos.forEach(arquivo => {
+            const img = document.createElement('img');
+            // Caminho relativo para a pasta dos desenhos
+            img.src = `sprites/asmita/${arquivo}.gif`;
+            img.alt = "Desenho";
+            galeria.appendChild(img);
+        });
+    </script>
+</body>
+</html>
