@@ -23,6 +23,7 @@ async function buscarRanking() {
                                 </a>
                                 <img src="sprites/avatar/${moldura}" class="borda-moldura" alt="borda">
                             </div>
+                            <img src="sprites/flags/${j.nationality.toLowerCase()}.png" alt="${j.nationality}" title="${j.nationality.toUpperCase()}"  class="flag">
                             <a class = "link-rc" href="${j.profile_link}" target=" _blank">
                             <span class="nome">${j.user_name}</span></a>
                         </div>
