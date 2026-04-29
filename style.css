@@ -24,11 +24,13 @@ h1 {
     text-align: center;
     margin-bottom: 30px;
     font-size: 20px;
+    background-color: #3f3f3f;
+    padding: 20px 78px;
 }
 
 .ranking-container {
-    background-color: #f7c6a5;
-    padding: 30px;
+    background-color: #3f3f3f;
+    padding: 10px;
     min-width: 350px;
     max-width: 600px;
 }
@@ -40,13 +42,11 @@ h1 {
     justify-content: space-between;
     
     /* Borda PNG */
-    border: 5px solid transparent;
-    border-image-source: url('sprites/avatar/border.png');
-    border-image-slice: 5;
-    border-image-repeat: round;
+    border: 2px solid rgb(44, 44, 44);
     
-    padding: 10px;
-    background-image: url('sprites/avatar/wood.png');
+    
+    padding: 15px;
+    background-image: url('sprites/avatar/back.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
