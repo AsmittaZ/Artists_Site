@@ -38,7 +38,7 @@
         window.addEventListener('touchstart', playAudio);
         // Lista os nomes dos arquivos que estão na mesma pasta do head.gif ou dentro dela
         const desenhos = [
-           "",
+           "diamante",
         ];
 
         const galeria = document.getElementById('galeria-grid');
@@ -46,7 +46,7 @@
         desenhos.forEach(arquivo => {
             const img = document.createElement('img');
             // Caminho relativo para a pasta dos desenhos
-            img.src = `sprites/andando/${arquivo}.gif`;
+            img.src = `sprites/eloy/${arquivo}.gif`;
             img.alt = "Desenho";
             galeria.appendChild(img);
         });
