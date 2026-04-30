@@ -14,7 +14,8 @@ async function buscarRanking() {
 
                 return `
                     <div class="jogador-item rank-${index + 1}">
-                        <div class="jogador-info">
+                        <!-- LADO ESQUERDO: Grupo de Identidade -->
+                        <div class="jogador-identidade">
                             <div class="avatar-borda-wrapper">
                                 <a href="${j.user_name.toLowerCase()}.html" target="_blank" rel="noopener noreferrer" class="avatar-link">
                                     <img src="sprites/avatar/${j.user_name.toLowerCase()}.png"
@@ -23,11 +24,22 @@ async function buscarRanking() {
                                 </a>
                                 <img src="sprites/avatar/${moldura}" class="borda-moldura" alt="borda">
                             </div>
-                            <img src="sprites/flags/${j.nationality.toLowerCase()}.png" alt="${j.nationality}" title="${j.nationality.toUpperCase()}"  class="flag">
-                            <a class = "link-rc" href="${j.profile_link}" target=" _blank">
-                            <span class="nome">${j.user_name}</span></a>
+                            
+                            <div class="dados-texto">
+                                <img src="sprites/flags/${j.nationality.toLowerCase()}.png" 
+                                    alt="${j.nationality}" 
+                                    title="${j.nationality.toUpperCase()}" 
+                                    class="flag">
+                                <a class="link-rc" href="${j.profile_link}" target="_blank">
+                                    <span class="nome">${j.user_name}</span>
+                                </a>
+                            </div>
                         </div>
-                        <span class="pontos">${j.score}<span class="pts"> pts</span></span>
+
+                        <!-- LADO DIREITO: Pontuação -->
+                        <div class="jogador-pontos">
+                            <span class="pontos">${j.score}<span class="pts"> pts</span></span>
+                        </div>
                     </div>
                 `;
             }).join('')}
