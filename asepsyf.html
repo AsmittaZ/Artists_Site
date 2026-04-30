@@ -9,18 +9,33 @@
 <body>
 
     <header>
-    <div class="perfil-container">
         <img id="perfil" src="sprites/avatar/AsepSyf.png" alt="Foto de Perfil">
         <h1 class="name">AsepSyf</h1>
-    </div>
+        
+        <audio id="musica-perfil" controls loop>
+            <source src="audio/asmita-palle-yellow.mp3" type="audio/mpeg">
+        </audio>
     </header>
 
     <main>
         <div id="galeria-grid" class="grid-container"></div>
     </main>
 
-
     <script>
+        const audio = document.getElementById('musica-perfil');
+        audio.volume = 0.5;
+
+        // Tenta tocar ao interagir com a página
+        const playAudio = () => {
+            audio.play().then(() => {
+                window.removeEventListener('click', playAudio);
+                window.removeEventListener('touchstart', playAudio);
+            }).catch(error => console.log("Autoplay bloqueado"));
+        };
+
+        window.addEventListener('load', playAudio);
+        window.addEventListener('click', playAudio);
+        window.addEventListener('touchstart', playAudio);
         // Lista os nomes dos arquivos que estão na mesma pasta do head.gif ou dentro dela
         const desenhos = [
             "acid_runner",

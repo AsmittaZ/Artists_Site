@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil do Artista</title>
-    <link rel="stylesheet" href= "artists.css">
+    <title>Perfil do Artista - Andando</title>
+    <link rel="stylesheet" href="artists.css">
 </head>
 <body>
 
     <header>
         <img id="perfil" src="sprites/avatar/Andando.png" alt="Foto de Perfil">
         <h1 class="name">Andando</h1>
+        
+        <audio id="musica-perfil" controls loop>
+            <source src="audio/asmita-palle-yellow.mp3" type="audio/mpeg">
+        </audio>
     </header>
 
     <main>
@@ -18,67 +22,29 @@
     </main>
 
     <script>
-        // Lista os nomes dos arquivos que estão na mesma pasta do head.gif ou dentro dela
-        const desenhos = [
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31",
-            "32",
-            "33",
-            "34",
-            "35",
-            "36",
-            "37",
-            "38",
-            "39",
-            "40",
-            "41",
-            "42",
-            "43",
-            "44",
-            "45",
-            "46",
-            "47",
-            "48",
-            "49",
-            "50",
-            "51",        
-        ];
+        const audio = document.getElementById('musica-perfil');
+        audio.volume = 0.5;
+
+        // Tenta tocar ao interagir com a página
+        const playAudio = () => {
+            audio.play().then(() => {
+                window.removeEventListener('click', playAudio);
+                window.removeEventListener('touchstart', playAudio);
+            }).catch(error => console.log("Autoplay bloqueado"));
+        };
+
+        window.addEventListener('load', playAudio);
+        window.addEventListener('click', playAudio);
+        window.addEventListener('touchstart', playAudio);
+
+        // 3. Troque o caminho da pasta dos desenhos aqui
+        const pastaDesenhos = "andando"; 
+        const desenhos = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51"];
 
         const galeria = document.getElementById('galeria-grid');
-
         desenhos.forEach(arquivo => {
             const img = document.createElement('img');
-            // Caminho relativo para a pasta dos desenhos
-            img.src = `sprites/andando/${arquivo}.gif`;
+            img.src = `sprites/${pastaDesenhos}/${arquivo}.gif`;
             img.alt = "Desenho";
             galeria.appendChild(img);
         });
