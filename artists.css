@@ -61,6 +61,12 @@ header {
     border-image-source: url(sprites/avatar/border-miners.png);
     border-image-slice:20;
     border-image-width: 20px;
+    transition: 0.5s;
+}
+
+.grid-container img:hover {
+    scale: 1.6;
+    z-index: 100;
 }
 
 .perfil-container {
