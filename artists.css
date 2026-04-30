@@ -41,19 +41,26 @@ header {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 20px;
+    gap: 30px;
     
     width: 90%;
     max-width: 1200px;
 }
 
 .grid-container img {
-    padding: 5px;
+    padding: 10px;
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: contain;
     image-rendering: pixelated;
-    border: 2px solid #333;
+    background-color: #313131;
+    background-image: url(sprites/avatar/background-miners.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    border-image-source: url(sprites/avatar/border-miners.png);
+    border-image-slice:20;
+    border-image-width: 20px;
 }
 
 .perfil-container {
@@ -62,4 +69,10 @@ header {
     align-items: center;      /* Centraliza horizontalmente */
     justify-content: center;  /* Centraliza verticalmente */
     gap: 15px;                /* Espaçamento entre a imagem e o nome */
+}
+
+.name {
+    background-color: #292929;
+    border: 2px solid rgb(146, 146, 146);
+    border-radius: 10px;
 }
