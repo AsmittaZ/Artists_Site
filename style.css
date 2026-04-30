@@ -79,6 +79,17 @@ h1 {
     align-items: center;
     gap: 10px;
     overflow: hidden;
+    background-color: #363636;
+    padding: 10px;
+    width: 100%;
+    border: 10px solid transparent;
+    border-image-source: url(sprites/avatar/border-miners.png);
+    border-image-slice: 10;
+    transition: 0.2s;
+}
+
+.dados-texto:hover {
+    scale: 1.1;
 }
 
 .flag {

@@ -25,15 +25,14 @@ async function buscarRanking() {
                                 <img src="sprites/avatar/${moldura}" class="borda-moldura" alt="borda">
                             </div>
                             
-                            <div class="dados-texto">
+                            <!-- O link agora engloba a bandeira e o nome -->
+                            <a class="link-rc dados-texto" href="${j.profile_link}" target="_blank">
                                 <img src="sprites/flags/${j.nationality.toLowerCase()}.png" 
                                     alt="${j.nationality}" 
                                     title="${j.nationality.toUpperCase()}" 
                                     class="flag">
-                                <a class="link-rc" href="${j.profile_link}" target="_blank">
-                                    <span class="nome">${j.user_name}</span>
-                                </a>
-                            </div>
+                                <span class="nome">${j.user_name}</span>
+                            </a>
                         </div>
 
                         <!-- LADO DIREITO: Pontuação -->
