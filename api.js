@@ -14,11 +14,13 @@ app.get('/ranking', async (req, res) => {
         await client.connect();
         const db = client.db('discord_bot');
         
-        // 1. Apontando para a coleção correta: 'users'
-        // 2. Ordenando pelo campo correto: 'score'
+        // Ordenando por score (decrescente) e desempatando por priority (crescente)
         const ranking = await db.collection('users')
             .find({})
-            .sort({ score: -1 })
+            .sort({ 
+                score: -1,     // Maior pontuação primeiro
+                priority: 1    // Menor prioridade desempata (ex: 1 ganha de 2)
+            })
             .toArray();
             
         console.log("Enviando para o site: " + ranking.length + " jogadores.");
