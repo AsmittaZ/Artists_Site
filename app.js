@@ -1,15 +1,31 @@
 async function buscarRanking() {
     try {
         const resposta = await fetch('https://artists-site.onrender.com/ranking');
-        const dados = await resposta.json();
+        let dados = await resposta.json();
         
+        // Ordenação de segurança no cliente (Maior score -> Maior priority)
+        dados.sort((a, b) => {
+            const scoreA = a.score || 0;
+            const scoreB = b.score || 0;
+            
+            // 1º Critério: Maior score
+            if (scoreB !== scoreA) {
+                return scoreB - scoreA;
+            }
+            
+            // 2º Critério (Desempate): Maior valor de priority
+            const priorityA = a.priority || 0;
+            const priorityB = b.priority || 0;
+            
+            return priorityB - priorityA;
+        });
+
         const divRanking = document.getElementById('ranking');
         
         divRanking.innerHTML = `
             <div class="ranking-container">
             ${dados.map((j, index) => {
-                // Se o rank for entre 1 e 5, usa o arquivo correspondente
-                // Caso contrário, usa 'rank-default.png' (substitua pelo nome da sua moldura padrão)
+                // Seleciona a moldura correspondente para os primeiros 5 colocados
                 const moldura = (index < 5) ? `rank-${index + 1}.png` : 'rank-geral.png';
 
                 return `
@@ -25,7 +41,7 @@ async function buscarRanking() {
                                 <img src="sprites/avatar/${moldura}" class="borda-moldura" alt="borda">
                             </div>
                             
-                            <!-- O link agora engloba a bandeira e o nome -->
+                            <!-- Link contendo a bandeira e o nome do usuário -->
                             <a class="link-rc dados-texto" href="${j.profile_link}" target="_blank">
                                 <img src="sprites/flags/${j.nationality.toLowerCase()}.png" 
                                     alt="${j.nationality}" 
