@@ -1,10 +1,9 @@
-// No seu arquivo api.js
 const express = require('express');
 const cors = require('cors');
 const { MongoClient } = require('mongodb');
 
 const app = express();
-app.use(cors()); // Isso é fundamental para o site conseguir "ler" o seu servidor
+app.use(cors()); // Permite que o frontend acesse esta API
 
 const uri = process.env.MONGODB_URI;
 
@@ -14,12 +13,14 @@ app.get('/ranking', async (req, res) => {
         await client.connect();
         const db = client.db('discord_bot');
         
-        // Ordenando por score (decrescente) e desempatando por priority (crescente)
+        // Consulta no MongoDB:
+        // 1º Critério: score (decrescente: -1) -> Maior pontuação primeiro
+        // 2º Critério: priority (decrescente: -1) -> Maior prioridade desempata em caso de score igual
         const ranking = await db.collection('users')
             .find({})
             .sort({ 
-                score: -1,     // Maior pontuação primeiro
-                priority: 1    // Menor prioridade desempata (ex: 1 ganha de 2)
+                score: -1,     // Maior score primeiro
+                priority: -1   // Maior prioridade primeiro
             })
             .toArray();
             
@@ -33,6 +34,6 @@ app.get('/ranking', async (req, res) => {
     }
 });
 
-// A porta 3000 é usada apenas se o serviço online não definir uma
+// A porta 3000 é usada caso a variável de ambiente PORT não esteja definida
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log('API rodando na porta ' + port));
