@@ -15,12 +15,12 @@ app.get('/ranking', async (req, res) => {
         
         // Consulta no MongoDB:
         // 1º Critério: score (decrescente: -1) -> Maior pontuação primeiro
-        // 2º Critério: priority (decrescente: -1) -> Maior prioridade desempata em caso de score igual
+        // 2º Critério: priority (crescente: 1)  -> Menor valor de prioridade desempata primeiro (ex: 0 ganha de 1)
         const ranking = await db.collection('users')
             .find({})
             .sort({ 
                 score: -1,     // Maior score primeiro
-                priority: -1   // Maior prioridade primeiro
+                priority: 1    // Menor prioridade primeiro
             })
             .toArray();
             
