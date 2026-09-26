@@ -3,21 +3,21 @@ async function buscarRanking() {
         const resposta = await fetch('https://artists-site.onrender.com/ranking');
         let dados = await resposta.json();
         
-        // Ordenação de segurança no cliente (Maior score -> Maior priority)
+        // Ordenação de segurança no cliente (Maior score -> Menor priority)
         dados.sort((a, b) => {
             const scoreA = a.score || 0;
             const scoreB = b.score || 0;
             
-            // 1º Critério: Maior score
+            // 1º Critério: Maior score primeiro
             if (scoreB !== scoreA) {
                 return scoreB - scoreA;
             }
             
-            // 2º Critério (Desempate): Maior valor de priority
-            const priorityA = a.priority || 0;
-            const priorityB = b.priority || 0;
+            // 2º Critério (Desempate): Menor valor de priority primeiro
+            const priorityA = a.priority !== undefined ? a.priority : 0;
+            const priorityB = b.priority !== undefined ? b.priority : 0;
             
-            return priorityB - priorityA;
+            return priorityA - priorityB;
         });
 
         const divRanking = document.getElementById('ranking');
