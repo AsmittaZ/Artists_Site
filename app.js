@@ -34,8 +34,8 @@ async function buscarRanking() {
                         <div class="jogador-identidade">
                             <div class="avatar-borda-wrapper">
                                 <a href="${j.user_name.toLowerCase()}.html" target="_blank" rel="noopener noreferrer" class="avatar-link">
-                                    <img src="sprites/avatar/${j.user_name.toLowerCase()}.png"
-                                        onerror="this.onerror=null; this.src='sprites/avatar/${j.user_name}.png'"
+                                    <img src="sprites/avatar/${j.user_name}.png"
+                                        onerror="this.onerror=null; this.src='sprites/avatar/${j.user_name.toLowerCase()}.png'"
                                         alt="${j.user_name}" class="avatar">
                                 </a>
                                 <img src="sprites/avatar/${moldura}" class="borda-moldura" alt="borda">
@@ -43,10 +43,11 @@ async function buscarRanking() {
                             
                             <!-- Link contendo a bandeira e o nome do usuário -->
                             <a class="link-rc dados-texto" href="${j.profile_link}" target="_blank">
-                                <img src="sprites/flags/${j.nationality.toLowerCase()}.png" 
-                                    alt="${j.nationality}" 
-                                    title="${j.nationality.toUpperCase()}" 
-                                    class="flag">
+                                ${j.nationality ? `<img src="sprites/flags/${j.nationality.toLowerCase()}.png"
+                                    alt="${j.nationality}"
+                                    title="${j.nationality.toUpperCase()}"
+                                    onerror="this.remove()"
+                                    class="flag">` : ''}
                                 <span class="nome">${j.user_name}</span>
                             </a>
                         </div>
